@@ -1,10 +1,41 @@
- <h1>signup page</h1>
- <form method="post" action="/register">
-     <input type="email"  name="username" placeholder="Enter your E-mail">
-     <input type="password" name="password" placeholder="Enter your password">
-     <button>SignUp</button>
+<% include partials/header%>
+<link rel="stylesheet" href="/public/register.css">
+<body>
+<% include partials/nav%>
+<div class="container">
+    <form action="/register" method="post" >
+        <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" name="username" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="form-group form-check">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+            <label class="form-check-label" for="exampleCheck1">Remmember Me</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Signup
 
- </form>
- <li><a href="/register"> Signup</a></li>
- <li><a href="/login">Login</a></li>
- <li><a href="/logout">Logout</a></li>
+
+
+
+
+
+
+        </button>
+    </form>
+</div>
+
+ <!--<form method="post" action="/register">-->
+     <!--<input type="email"  name="username" placeholder="Enter your E-mail">-->
+     <!--<input type="password" name="password" placeholder="Enter your password">-->
+     <!--<button>SignUp</button>-->
+
+ <!--</form>-->
+ <!--<li><a href="/register"> Signup</a></li>-->
+ <!--<li><a href="/login">Login</a></li>-->
+ <!--<li><a href="/logout">Logout</a></li>-->
+<% include partials/footer.ejs%>

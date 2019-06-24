@@ -58,8 +58,12 @@ app.post('/register',function (req,res) {
     User.register(new User({username:req.body.username}),req.body.password,function (err,use) {
     if(err){
         console.log(err);
+        //alert("Invalid credentials or user already exitsts");
+        console.log("pehle");
         res.render('register')
+        console.log("Baad me");
     }
+
     //Now following line logs the user in
         //  OR in future passport.authenticate("twitter")(req,res,function () {
 

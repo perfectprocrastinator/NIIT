@@ -1,0 +1,23 @@
+body{
+    /*background: #bdc3c7; !* fallback for old browsers *!*/
+    /*background: -webkit-linear-gradient(to right, #2c3e50, #bdc3c7); !* Chrome 10-25, Safari 5.1-6 *!*/
+    /*background: linear-gradient(to right, #2c3e50, #bdc3c7);*/
+    background-image:url("https://backgrounddownload.com/wp-content/uploads/2018/09/background-images-for-company-websites-7.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/*.container{*/
+/*width: 40%;*/
+/*height: 50vh;*/
+/*background: antiquewhite;*/
+/*border: 2px solid black;*/
+/*margin-top: 100px;*/
+/*padding: 20px;*/
+/*}*/
+.container{
+    margin-top: 150px;
+    margin-left: 1300px;
+    width: 400px;
+    background-color: springgreen;
+    padding: 30px;
+}

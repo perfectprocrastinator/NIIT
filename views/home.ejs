@@ -1,4 +1,58 @@
-<h1>This is the homepage</h1>
-<li><a href="/register"> Signup</a></li>
-<li><a href="/login">Login</a></li>
-<li><a href="/logout">Logout</a></li>
+<% include partials/header%>
+<script type="text/javascript" src="/public/home.js"></script>
+<link rel="stylesheet" href="/public/home.css">
+</head>
+<body >
+<% include partials/nav%>
+
+<!--<h1>This is the homepage</h1>-->
+<!--<li><a href="/register"> Signup</a></li>-->
+<!--<li><a href="/login">Login</a></li>-->
+<!--<li><a href="/logout">Logout</a></li>-->
+<div class="container">
+    <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner" >
+                <div class="carousel-item active" data-interval="3000">
+                    <img src="https://www.niit-tech.com/sites/default/files/3-min_1_0.png" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>NIIT Technologies conferred with Partner of the Year for Quality by Aflac</h5>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="https://www.niit-tech.com/sites/default/files/shutterstock_524289184%2520%25281%2529_0_1.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Incessant Technologies cited as a Strong Performer for Digital Process Automation</h5>
+                        <p>In Forrester Wave Digital Process Automation Service Providers, Q3 2018
+
+
+
+                        </p>
+                    </div>
+                </div>
+                <div class="carousel-item" data-interval="3000">
+                    <img src="https://www.niit-tech.com/sites/default/files/Desktop-banner_0.jpg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>NIIT Technologies positioned as a ‘Leader’ in the Cloud Advisory Assessment &amp; Migration Evaluation by NelsonHall</h5>
+
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>
+<% include partials/footer.ejs%>
