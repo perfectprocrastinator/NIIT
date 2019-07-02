@@ -3,7 +3,13 @@ var passportLocalMongoose=require("passport-local-mongoose");
 
 var userSchema=mongoose.Schema({
     username:String,
-    password:String
+    password:String,
+    employees:[
+        {
+            type:mongoose.Schema.Types.ObjectId,
+            ref:"Employee"
+        }
+    ]
 });
 //Takes passport local mongoose package and adds bunch of methods
 //that come with package to userSchema

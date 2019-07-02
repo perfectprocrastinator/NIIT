@@ -6,10 +6,12 @@ var express                  =  require('express');
     passportLocalMongoose    =  require('passport-local-mongoose');
     mongoose                 =  require('mongoose');
     User                     =  require('./models/user');
+    Employee                 =  require('./models/employee')
 mongoose.connect("mongodb://localhost/NIIT");
 app.set("view engine","ejs");
 app.use('/public',express.static(__dirname+"/public"));
 app.use(bodyparser.urlencoded({extended:true}));
+//Passport Logic
 app.use(require("express-session")({
     secret:"NIIT is a global learning outsourcing company",
     resave:false,
@@ -20,6 +22,24 @@ app.use(passport.session());
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 passport.use(new LocalStrategy(User.authenticate()));
+// SCHEMA SETUP
+
+// Employee.create(
+//     {
+//         date:"07/03/1997",name:"Bilal",role:"manager"
+//     }
+//         ,function (err,employee) {
+//         if(err){
+//             console.log("error")
+//
+//         }
+//         else {
+//             console.log("newly created employee");
+//             console.log(employee);
+//         }
+//
+//     }
+// );
 
 
 
@@ -37,6 +57,22 @@ app.get('/niit',isLoggedIn,function (req,res) {
     //befor rendering secret isLogged in is called and upon calling
     //it if it returns next then only next function is called to render secret page
     res.render("niit");
+
+})
+app.post('/niit',function (req,res) {
+    var date=req.body.date;
+
+    Employee.find({ date: date}, function (err, foundUsers) {
+        if(err){
+            console.log(err)
+        }
+        else{
+            res.render("details",{users:foundUsers});
+        }
+    });
+
+
+
 
 })
 
@@ -59,9 +95,9 @@ app.post('/register',function (req,res) {
     if(err){
         console.log(err);
         //alert("Invalid credentials or user already exitsts");
-        console.log("pehle");
+
         res.render('register')
-        console.log("Baad me");
+
     }
 
     //Now following line logs the user in
