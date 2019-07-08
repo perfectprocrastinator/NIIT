@@ -3,7 +3,7 @@
 <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
-<script type="text/javascript" src="/public/details.js"></script>
+<script type="text/javascript" src="/public/attendance.js"></script>
 
 </head>
 <body>
@@ -56,34 +56,3 @@
         </nav>
     </div>
 </nav>
-<table id="example" class="table table-striped table-bordered" style="width:100%">
-    <thead>
-    <tr>
-        <th>First Name</th>
-        <th>Last Name</th>
-        <th>Attendance</th>
-        <th>Gender</th>
-        <th>Phone No.</th>
-        <th>Role</th>
-        <th>Employment Type</th>
-        <th>Current Project</th>
-    </tr>
-    </thead>
-    <tbody>
-    <% users.forEach(function (user) {%>
-    <tr>
-        <td><%= user.Fname %></td>
-        <td><%= user.Lname %></td>
-        <td><%= user.Attendance %></td>
-        <td><%= user.Sex %></td>
-        <td><%= user.Phone %></td>
-        <td><%= user.Role %></td>
-        <td><%= user.EmploymentType %></td>
-        <td><%= user.CurrProject %></td>
-
-    </tr>
-   <% })%>
-
-    </tbody>
-
-</table>

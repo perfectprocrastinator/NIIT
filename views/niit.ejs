@@ -70,8 +70,14 @@
         <!--});-->
     <!--});-->
 <!--</script>-->
+<!--<% var date=(moment().format('L')).toString(); %>-->
+<!--<form action="/attendance" method="post">-->
+    <!--<input type="text" name="date" value="<%= date%>" />-->
+    <!--<button type="submit" class="btn btn-primary">Mark Attendance</button>-->
+<!--</form>-->
+
 <form action="/niit" method="post">
-<input type="text" name="date" value="10/24/2014" />
+<input type="text" name="date" value="<%= date%>" />
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 <!--<input type="text" name="daterange" value="01/01/2018 - 01/15/2018" />-->

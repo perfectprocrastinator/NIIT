@@ -7,6 +7,7 @@ var express                  =  require('express');
     mongoose                 =  require('mongoose');
     User                     =  require('./models/user');
     Employee                 =  require('./models/employee')
+    moment                   =  require('moment');
 mongoose.connect("mongodb://localhost/NIIT");
 app.set("view engine","ejs");
 app.use('/public',express.static(__dirname+"/public"));
@@ -26,7 +27,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 
 // Employee.create(
 //     {
-//         date:"07/03/1997",name:"Bilal",role:"manager"
+//         Date:"07/03/2019",Fname:"Bilal",Lname:"Ahmad",Sex:"Male",Phone:"8299833258",Role: "Developer",EmploymentType:"Intern",CurrProject: "NIIT website"
 //     }
 //         ,function (err,employee) {
 //         if(err){
@@ -61,15 +62,25 @@ app.get('/niit',isLoggedIn,function (req,res) {
 })
 app.post('/niit',function (req,res) {
     var date=req.body.date;
+   //  console.log(date);
+   // console.log(moment().format('L'));
+   if(date==(moment().format('L')).toString()){
+      res.render("attendance");
 
-    Employee.find({ date: date}, function (err, foundUsers) {
-        if(err){
-            console.log(err)
-        }
-        else{
-            res.render("details",{users:foundUsers});
-        }
-    });
+   }
+   else{
+       Employee.find({ Date: date}, function (err, foundUsers) {
+       if(err){
+           console.log(err)
+       }
+       else{
+           res.render("details",{users:foundUsers});
+       }
+   });
+
+   }
+
+
 
 
 
