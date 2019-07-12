@@ -21,111 +21,102 @@
 <body>
 <!-- Material form register -->
 <div class="container">
-<div class="container">
-<div class="card">
+    <div class="container">
+        <div class="card">
 
-    <h5 class="card-header info-color white-text text-center py-4">
-        <strong>Enter Employee Details</strong>
-    </h5>
+            <h5 class="card-header info-color white-text text-center py-4">
+                <strong>Enter Employee Details</strong>
+            </h5>
 
-    <!--Card content-->
-    <div class="card-body px-lg-5 pt-0">
+            <!--Card content-->
+            <div class="card-body px-lg-5 pt-0">
 
-        <!-- Form -->
-        <form class="text-center" style="color: #757575;" action="/attendance" method="post">
+                <!-- Form -->
+                <form class="text-center" style="color: #757575;" action="/attendance" method="post">
 
-            <div class="form-row">
-                <div class="col">
-                    <!-- First name -->
-                    <div class="md-form">
-                        <input type="text"  name="Fname" id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">First name</label>
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text"  name="Fname" id="materialRegisterFormFirstName" class="form-control">
+                                <label for="materialRegisterFormFirstName">First name</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="text" name="Lname" id="materialRegisterFormLastName" class="form-control">
+                                <label for="materialRegisterFormLastName">Last name</label>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <!-- Last name -->
-                    <div class="md-form">
-                        <input type="email" name="Lname" id="materialRegisterFormLastName" class="form-control">
-                        <label for="materialRegisterFormLastName">Last name</label>
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- Gender -->
+                            <div class="md-form">
+                                <input type="text" name="Gender" id="materialRegisterFormGender" class="form-control">
+                                <label for="materialRegisterFormGender">Gender</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Phone no -->
+                            <div class="md-form">
+                                <input type="number" name="Phone" id="materialRegisterFormPhone" class="form-control">
+                                <label for="materialRegisterFormPhone">Phone No</label>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- Role -->
+                            <div class="md-form">
+                                <input type="text" name="Role" id="materialRegisterFormRole" class="form-control">
+                                <label for="materialRegisterFormRole">Role</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Employment Type -->
+                            <div class="md-form">
+                                <input type="text" name="EmploymentType" id="materialRegisterFormEmploymentType" class="form-control">
+                                <label for="materialRegisterFormEmploymentType">Employment Type</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="col">
+                            <!-- Current Project -->
+                            <div class="md-form">
+                                <input type="text" name="CurrProject"  id="materialRegisterFormCurrProject" class="form-control">
+                                <label for="materialRegisterFormCurrProject">Current Project</label>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <!-- Attendance Checkbox -->
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio1" name="customRadio1" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio1">Present</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" id="customRadio2" name="customRadio2" class="custom-control-input">
+                                <label class="custom-control-label" for="customRadio2">Absent</label>
+                            </div>
+
+                        </div>
+                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Submit Details</button>
+                    </div>
+
+                </form>
+                <!-- Form -->
+
             </div>
-            <div class="form-row">
-                <div class="col">
-                    <!-- Gender -->
-                    <div class="md-form">
-                        <input type="text" name="Gender" id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">Gender</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- Phone no -->
-                    <div class="md-form">
-                        <input type="number" name="Phone" id="materialRegisterFormLastName" class="form-control">
-                        <label for="materialRegisterFormLastName">Phone No</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    <!-- Role -->
-                    <div class="md-form">
-                        <input type="text" name="Role" id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">Role</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- Employment Type -->
-                    <div class="md-form">
-                        <input type="text" name="Employment" id="materialRegisterFormLastName" class="form-control">
-                        <label for="materialRegisterFormLastName">Employment Type</label>
-                    </div>
-                </div>
-            </div>
-            <div class="form-row">
-                <div class="col">
-                    <!-- Current Project -->
-                    <div class="md-form">
-                        <input type="text" name="CurrProject"  id="materialRegisterFormFirstName" class="form-control">
-                        <label for="materialRegisterFormFirstName">Current Project</label>
-                    </div>
-                </div>
-                <div class="col">
-                    <!-- Attendance Checkbox -->
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio1" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio1">Present</label>
-                    </div>
-                    <div class="custom-control custom-radio">
-                        <input type="radio" id="customRadio2" name="customRadio" class="custom-control-input">
-                        <label class="custom-control-label" for="customRadio2">Absent</label>
-                    </div>
 
-                </div>
-                <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0" type="submit">Submit Details</button>
-            </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        </form>
-        <!-- Form -->
-
+        </div>
+        <!-- Material form register -->
     </div>
-
-</div>
-<!-- Material form register -->
-</div>
 </div>
 </body>
 </html>
+
+
+
+

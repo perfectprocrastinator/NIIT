@@ -6,7 +6,7 @@ var express                  =  require('express');
     passportLocalMongoose    =  require('passport-local-mongoose');
     mongoose                 =  require('mongoose');
     User                     =  require('./models/user');
-    Employee                 =  require('./models/employee')
+    Employee                 =  require('./models/employee');
     moment                   =  require('moment');
 mongoose.connect("mongodb://localhost/NIIT");
 app.set("view engine","ejs");
@@ -79,12 +79,6 @@ app.post('/niit',function (req,res) {
    });
 
    }
-
-
-
-
-
-
 })
 
 
@@ -142,6 +136,7 @@ app.get('/logout',function (req,res) {
     res.redirect('/');
     
 })
+
 //Adding a fn so that we cannot access secret page directly through url
 
 function isLoggedIn(req,res,next){
@@ -151,9 +146,39 @@ function isLoggedIn(req,res,next){
     res.redirect('/login');
 
 }
-app.listen('7275',function (err,res) {
+
+
+app.post('/attendance',function(req,res) {
+
+    var Fname = req.body.Fname
+    var Lname = req.body.Lname
+    var Gender = req.body.Gender
+    var Phone = req.body.Phone
+    var Role = req.body.Role
+    var EmploymentType = req.body.EmploymentType
+    var CurrProject = req.body.CurrProject
+
+    var data = new Employee({
+        Date: (moment().format('L')).toString(), Fname: Fname, Lname: Lname, Gender: Gender, Phone: Phone, Role: Role,
+        EmploymentType: EmploymentType, CurrProject: CurrProject
+    });
+
+    // save model to database
+    data.save(function (err, data) {
+        if (err) console.error(err);
+        else
+            console.log(data.Fname + " saved to employee collection.");
+    });
+
+    res.redirect("/niit");
+});
+
+
+
+
+app.listen('7276',function (err,res) {
     if(err)
         console.log(err);
     else
-        console.log("server started on port 7275");
+        console.log("server started on port 7276");
 })
